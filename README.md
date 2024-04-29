@@ -1,7 +1,7 @@
 ### Please find the deployed app here:  https://main.d3or6sk41cokek.amplifyapp.com/
 #
 
-Please go through the **demo** of the working application here: https://youtu.be/TB20O_CPnfE
+### Please go through the **demo** of the working application here: https://youtu.be/TB20O_CPnfE
 
 <br/><br/>
 # Steps to Deploy:
