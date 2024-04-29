@@ -1,11 +1,9 @@
-### You can find the deployed app here:
-https://main.d3or6sk41cokek.amplifyapp.com/
+### Please find the deployed app here:  https://main.d3or6sk41cokek.amplifyapp.com/
+#
 
+Please go through the **demo** of the working application here: https://youtu.be/TB20O_CPnfE
 
-# Demo:
-Please go through the working demo of the application here: https://youtu.be/TB20O_CPnfE
-
-
+<br/><br/>
 # Steps to Deploy:
 ## - Setting up the React application:
     - You can find the code for the frontend application in the 'fovus-file-upload' folder.
