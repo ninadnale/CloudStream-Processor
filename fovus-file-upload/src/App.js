@@ -16,8 +16,8 @@ function App() {
   
  const upload = async () => {
   AWS.config.update({
-    accessKeyId: process.env.accessKeyId,
-    secretAccessKey: process.env.secretAccessKey,
+    accessKeyId: process.env.REACT_APP_accessKeyId,
+    secretAccessKey: process.env.REACT_APP_secretAccessKey,
   });
 
   const S3_BUCKET = "fovus-april";
