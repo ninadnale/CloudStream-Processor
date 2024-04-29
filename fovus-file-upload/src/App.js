@@ -3,7 +3,7 @@ import './App.css';
 import { useRef, useState } from 'react';
 import AWS from 'aws-sdk';
 import { nanoid } from 'nanoid'
-// import config from './config';
+import config from './config';
 
 function App() {
   const inputTextRef = useRef(null);
