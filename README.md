@@ -8,7 +8,7 @@ https://main.d3or6sk41cokek.amplifyapp.com/
 Please go through the working demo of the application here: https://youtu.be/TB20O_CPnfE
 
 # Steps to Deploy:
-## 1. Setting up the React application:
+## - Setting up the React application:
     - You can find the code for the frontend application in the 'fovus-file-upload' folder.
     - cd to 'fovus-file-upload'
     - Add an environment variables file here to setup your access key for the application. Add access key in variable named 'REACT_APP_accessKeyId' and secret key in 'REACT_APP_secretAccessKey'.
@@ -17,7 +17,7 @@ Please go through the working demo of the application here: https://youtu.be/TB2
     - Run > npm start
       To start the frontend application.
 
-## 2. Setting up the AWS stack:
+## - Setting up the AWS stack:
 1. Set up an S3 bucket with appropriate access roles, name it 'fovus-april'.
 
 2. Set up a POST request in API Gateway service, provide the url of the POST api in react application in the 'App.js' file
