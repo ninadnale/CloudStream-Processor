@@ -3,7 +3,7 @@ import './App.css';
 import { useRef, useState } from 'react';
 import AWS from 'aws-sdk';
 import { nanoid } from 'nanoid'
-import config from './config';
+// import config from './config';
 
 function App() {
   const inputTextRef = useRef(null);
@@ -16,8 +16,8 @@ function App() {
   
  const upload = async () => {
   AWS.config.update({
-    accessKeyId: config.accessKeyId,
-    secretAccessKey: config.secretAccessKey,
+    accessKeyId: process.env.accessKeyId,
+    secretAccessKey: process.env.secretAccessKey,
   });
 
   const S3_BUCKET = "fovus-april";
