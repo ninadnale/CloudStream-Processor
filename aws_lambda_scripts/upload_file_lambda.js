@@ -4,7 +4,7 @@ import { DynamoDBDocumentClient, ScanCommand, PutCommand, GetCommand,} from "@aw
 const client = new DynamoDBClient({});
 const dynamo = DynamoDBDocumentClient.from(client);
 
-const tableName = "fovus-file-table";
+const tableName = "file-record-table";
 
 export const handler = async (event) => {
   

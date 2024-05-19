@@ -20,7 +20,7 @@ function App() {
     secretAccessKey: process.env.REACT_APP_secretAccessKey,
   });
 
-  const S3_BUCKET = "fovus-april";
+  const S3_BUCKET = "file-upload-aws-s3-bucket";
   const REGION = "us-west-1";
 
   const s3 = new AWS.S3({

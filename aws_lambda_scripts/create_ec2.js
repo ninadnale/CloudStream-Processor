@@ -16,7 +16,7 @@ const params = {
     Name: "demo_ec2",
   },
   SecurityGroups: [ // SecurityGroupStringList
-    "Fovus-Security-Group",
+    "Def-Security-Group",
   ],
 };
 
@@ -42,7 +42,7 @@ if(element.eventName.toLowerCase() == 'insert'){
             
             var userData= `#!/bin/bash
             pip install boto3
-            aws s3 cp s3://fovus-april/modify_file.py ./
+            aws s3 cp s3://file-upload-aws-s3-bucket/modify_file.py ./
             python3 modify_file.py ${inputRecord.id.S} ${inputRecord.input_text.S} ${inputRecord.input_file_path.S}
             `
             console.log(userData);

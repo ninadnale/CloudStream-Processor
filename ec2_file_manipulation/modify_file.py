@@ -45,7 +45,7 @@ def upload_file_to_s3(bucket_name, file_path, object_key):
 
 def update_record(id_value, output_file_path):
     dynamodb = boto3.client('dynamodb', region_name='us-west-1')
-    table_name = 'fovus-file-table'
+    table_name = 'file-record-table'
     
     update_expression = "SET output_file_path = :val"
     expression_attribute_values = {":val": {"S": output_file_path}}
@@ -67,7 +67,7 @@ def update_record(id_value, output_file_path):
 
 def instance_audit_update(id_value, output_file_path):
     dynamodb = boto3.client('dynamodb', region_name='us-west-1')
-    table_name = 'fovus-file-table'
+    table_name = 'file-record-table'
     
     update_expression = "SET output_file_path = :val"
     expression_attribute_values = {":val": {"S": output_file_path}}
