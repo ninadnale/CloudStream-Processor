@@ -1,3 +1,32 @@
+# AWS based File Processing Application
+
+This project is a **full-stack file processing pipeline** built with AWS services, React, and Lambda functions to automate file uploads, processing, and tracking.
+
+## Overview
+The application allows users to upload files through a React frontend. Upon file upload, an automated AWS pipeline is triggered to:
+1. Process the file in an EC2 instance.
+2. Manipulate the file as per predefined rules.
+3. Save and update processed files and statuses in AWS S3 and DynamoDB.
+
+## Steps to Deploy
+
+### 1. Setting up the React Application
+1. **Navigate to the Frontend Directory**:
+   - Locate the code in the `AWS-file-upload` folder and navigate to it.
+     ```bash
+     cd AWS-file-upload
+     ```
+2. **Configure Environment Variables**:
+   - Add a `.env` file for AWS credentials:
+     ```plaintext
+     REACT_APP_accessKeyId=YOUR_ACCESS_KEY_ID
+     REACT_APP_secretAccessKey=YOUR_SECRET_ACCESS_KEY
+     ```
+3. **Install Dependencies**:
+   ```bash
+   npm install
+
+
 <br/><br/>
 # Steps to Deploy:
 ## - Setting up the React application:
@@ -9,27 +38,6 @@
     - Run > npm start
       To start the frontend application.
 
-## - Setting up the AWS stack:
-1. Set up an S3 bucket with appropriate access roles, name it 'file-upload-aws-s3-bucket'.
-
-2. Set up a POST request in API Gateway service, provide the url of the POST api in react application in the 'App.js' file
-
-3. Create a lambda function with the latest npm environment to support the javascript SDK v3. Copy the 'upload_file_lambda.js' file from 'aws_lambda_scripts' folder.
-    - The lambda function needs to be setup with IAM role with permissions -> ['AmazonDynamoDBFullAccess'].
-    - Then set up the trigger of this lambda function as the API Gateway and for this provide the ARN of the POST api that we created in step 2.
-
-4. Create two tables in dynamoDB with names 'file-record-table' and 'instance-audit'. Enable the event stream for first table. 
-    [This will help us trigger another lambda function to create an EC2 instance upon entry of a new record in the 'file-record-table']
-    [The 'instance-audit' table will help us track the instance ID of the instances that we have created to run the file manipulation script and track their status, so that they can be terminated after the execution is done.]
-
-5. Create another lambda function with latest npm environment so as to support the latest SDK. Copy the 'create_ec2.js' file from 'aws_lambda_scripts' folder.
-    - This lambda needs to be setup with IAM role having permissions -> ['AmazonDynamoDBFullAccess', 'AmazonEC2FullAccess', 'IAMFullAccess']
-    - In order for this lambda to create a new ec2 VM, we also need a separate access role that needs to set up the new VM.
-        - For this, create an IAM role named 'demo_ec2' and provide permissions -> ['AmazonDynamoDBFullAccess', 'AmazonEC2FullAccess', 'AmazonS3FullAccess', 'IAMReadOnlyAccess'].
-          These access permissions are required in order for us to run a script inside VM which downloads files from our S3 bucket and updates records in DynamoDB.
-    - Then set up the trigger of this lambda function as DynamoDB and for this provide ARN of 'file-record-table' that we created in step 4.
-
-6. Copy the 'modify_file.py' script which is located in 'ec2_file_manipulation', upload it to the S3 bucket we created earlier in step 1.
 
 ##
 
